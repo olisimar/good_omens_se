@@ -1,0 +1,716 @@
+/*
+  Written by: Werner Johansson
+        date: 2009-07-25
+     webpage: www.good-omens.se
+*/
+
+/********************************************************************
+  Erik A. Meyers reset css - http://meyerweb.com/eric/tools/css/reset/
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* end of Erik A. Meyers reset css, Thanks for sharing :)
+***********************************************************************/
+
+/* My own CSS */
+/* * * * * * General CSS * * * * * */
+
+body { /* Just gives me a grey background */
+	background:							url( 'static_img/metal003.gif' );
+	font-family:						Serif;
+	font-size:							14px; /* To compensate for stupid browsers */
+	line-height:						1.1em;
+	font-weight:						none;
+	font-style:							none;
+	font-family:						monospace;
+}
+
+div#wrapper { /*Contains the whole site */
+	width:									960px;
+	margin:									5px auto 5px auto;
+/*	background:							#999; */
+}
+
+/* General classes, reused throughout the site */
+.border {
+	border:									ridge 1px #666;
+}
+legend {
+	text-indent:						1px;
+	padding:								2px;
+	font-size:							0.8em;
+	font-style:							italic;
+}
+.right_edge {
+	float:									right;
+	margin-right:						20px;
+}
+
+/* * * * * * * End of General CSS * * * * * */
+
+
+/*
+	Header section, not dynamic. Generated once really.
+*/
+div#header {
+	width:									960px;
+	clear:									both;
+	display:								block;
+	height:									75px;
+	min-height:							75px;
+	max-height:							75px;
+	background:							url( 'static_img/header_general7.gif' );
+}
+div#login {
+	float:									right;
+	display:								block;
+	width:									290px;
+	margin:									0px 10px 0px 5px;
+	color:									#ffa300;
+}
+div#login div {
+	margin:									20px 0px -18px 80px;
+	text-align:							center;
+}
+div#login div a {
+	color:									#ff9000;
+	text-decoration:				none;
+}
+div#login form {
+	display:								block;
+	margin:									5px 15px 0px 5px;
+}
+div#login form#login {
+	display:								block;
+	margin:									-10px 15px 0px 5px;
+	text-align:							right;
+}
+
+div#login label {
+	display:								block;
+	width:									75px;
+	text-align:							right;
+	float:									left;
+	font-family:						monospace;
+	font-size:							13px;
+	height:									18px;
+	margin:									4px 1px 0px 0px;
+	clear:									left;
+}
+div#login input{
+	display:								block;
+	clear:									none;
+}
+div#login a {
+	text-decoration:				none;
+	text-align:							center;
+	color:									#FFF;
+	font-family:						monospace;
+	font-size:							15px;
+	font-weight:						bold;
+}
+
+div#admin {
+	margin:									20px 15px 0px 0px;
+	text-align:							center;
+	width:									175px;
+	display:								block;
+	float:									right;
+}
+div#admin form input {
+	width:									150px;
+}
+/*
+	The whole middle section, including the menu, that is however dealt with on a
+	seperate section.
+*/
+div#main {
+	display:								block;
+	width:									960px;
+}
+
+/*
+	Deals with the main_menu <div> and shouldn't be used elsewhere.
+*/
+div#main_menu {
+	width:									208px;
+	float:									left;
+	display:								block;
+/*	height:									400px; */
+	min-height:							400px;
+	margin:									0px 0px 0px 0px;
+	background:							url( 'static_img/menu_backdrop1.jpg' );
+	background-repeat:			repeat-y;
+}
+div#main_menu ul {
+	margin:									0px 4px;
+}
+div#main_menu ul li.top_of_menu {
+	display:								block;
+	font-size:							12px;
+	font-family:						monospace;
+	min-height:							20px;
+	height:									20px;
+	max-height:							20px;
+	line-height:						20px;
+}
+div#main_menu ul li {
+	display:								block;
+	font-size:							12px;
+	font-family:						monospace;
+	min-height:							20px;
+	height:									20px;
+	max-height:							20px;
+	line-height:						20px;
+}
+/*
+div#main_menu ul li:hover {
+	display:								block;
+	font-size:							12px;
+	font-family:						monospace;
+	min-height:							20px;
+	height:									20px;
+	max-height:							20px;
+	line-height:						20px;
+	border:									1px solid #000;
+	background-color:				#000;
+}
+*/
+/* These <a> classes are for the mainmenu only */
+div#main_menu ul li a.menu_top_select {
+	display:								block;
+	text-indent:						10px;
+	color:									#ff9000;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_top_general5.gif' );
+}
+div#main_menu ul li a.menu_top_unselect {
+	display:								block;
+	text-indent:						10px;
+	text-decoration:				none;
+	color:									#DDD;
+	background:							url( 'static_img/menu_top_general4.gif' );
+}
+div#main_menu ul li a.menu_sub_select {
+	display:								block;
+	text-indent:						15px;
+	text-decoration:				none;
+	color:									#ffbb00;
+	background:							url( 'static_img/menu_sub_general2.gif' );
+}
+div#main_menu ul li a.menu_sub_unselect {
+	display:								block;
+	text-indent:						15px;
+	text-decoration:				none;
+	color:									#f6b60a;
+	background:							url( 'static_img/menu_sub_general1.gif' );
+}
+div#main_menu ul li a.menu_art_select {
+	display:								block;
+	text-indent:						15px;
+	text-decoration:				none;
+	color:									#76c552;
+	background:							url( 'static_img/menu_article_general3.gif' );
+}
+div#main_menu ul li a.menu_art_unselect {
+	display:								block;
+	text-indent:						20px;
+	text-decoration:				none;
+	color:									#FFFD80;
+	background:							url( 'static_img/menu_article_general4.gif' );
+}
+
+div#main_menu ul li a:hover {
+	text-decoration:				none;
+	color:									#99F;
+}
+
+/****************************************************************************
+	This deals with the main information square in the middle. There might be a
+	generated submenu included on the area. This will have to be dealt with
+	seperatly.
+	It's width is dependent on the main_menu so consult with that before editing.
+*/
+div#main_info {
+	display:							block;
+	font:									normal 0.95em/1.05em normal serif;
+	float:								left;
+	width:								530px;
+	margin:								5px 5px 5px 5px;
+/*	background:						#CCC; */
+}
+div#main_info h3 {
+	font-size:						1.1em;
+	font-weight:					bold;
+	font-style:						italic;
+	text-indent:					30px;
+	line-height:					25px;
+}
+
+/*-------------------------------------------------------------------------*/
+
+div#user {
+	margin:								0px auto 0px auto;
+	width:								100%;
+	background:						#CCC;
+}
+div#user ol {
+	padding:							5px;
+}
+div#user ol li {
+	list-style-type:			disc;
+	margin:								3px 0px 7px 0px;
+}
+div#user form fieldset.border {
+	border:								2px groove #222;
+	padding:							2px;
+}
+div#user form fieldset label {
+	display:							block;
+	width:								120px;
+	text-align:						right;
+	float:								left;
+	font-family:					monospace;
+	font-size:						13px;
+	height:								18px;
+	margin:								4px 1px 0px 0px;
+	line-height:					18px;
+	clear:								left;
+}
+div#user form fieldset label.consent {
+	display:							block;
+	width:								300px;
+	text-align:						right;
+	float:								left;
+	font-family:					monospace;
+	font-size:						13px;
+	height:								18px;
+	margin:								4px 1px 0px 0px;
+	line-height:					18px;
+}
+div#user form fieldset label.admin_chore {
+	display:							block;
+	width:								320px;
+	text-align:						right;
+	float:								left;
+	font-family:					monospace;
+	font-size:						13px;
+	height:								18px;
+	margin:								4px 1px 0px 0px;
+	line-height:					18px;
+}
+div#user form fieldset input {
+	width:								142px;
+}
+
+
+div#user_in {
+	margin:								0px auto 0px auto;
+	width:								99%;
+	font-family:					monospace;
+	font-size:						1.0em;
+	line-height:					1.0em;
+	background:						#CCC;
+}
+div#user_in form {
+
+}
+div#user_in form fieldset {
+	padding:							2px;
+	border:								2px outset #666;
+	width:								99%;
+}
+/*
+div#user_in form fieldset legend {
+	font-size:						0.9em;
+	text-indent:					5px;
+	font-style:						italic;
+	border:								2px outset #555;
+}
+*/
+div#user_in form fieldset label {
+	margin-left:					15px;
+}
+div#user_in form fieldset input {
+}
+div#user_in form fieldset input.wanted_title {
+	width:								270px;
+}
+div#user_in form fieldset textarea {
+	display:							block;
+	width:								99%;
+	min-height:						300px;
+	height:								300px;
+	max-height:						300px;
+	margin:								0px auto 0px auto;
+}
+
+/*=========================================================================*/
+/* The article css in div:main_info */
+div#article {
+}
+div#article div#head {
+	display:							block;
+	height:								25px;
+	background:						url( 'static_img/info_head3.gif' );
+}
+div#article div#head h3 {
+	display:							block;
+	font-size:						1.05em;
+	font-weight:					italic;
+}
+div#article div#text {
+	display:							block;
+	width:								517px;
+	text-align:						left;
+	padding:							2px 5px 2px 8px;
+	background:						url( 'static_img/info_body1.gif' );
+}
+div#article div#text p {
+	margin:								0px 0px 5px 0px;
+}
+div#article div#authour {
+	display:							block;
+	height:								19px;
+	padding:							8px 10px 0px 0px;
+	background:						url( 'static_img/info_footer2.gif' );
+}
+div#article div#authour p {
+	display:							block;
+	width:								99%;
+	margin:								0px 0px;
+	text-align:						right;
+}
+
+/*=========================================================================*/
+/* The blog css in div:main_info */
+div#show_blog {
+	width:								530px;
+	padding:							0px 0px;
+}
+div#show_blog div#blog_head {
+	display:							block;
+	height:								25px;
+	background:						url( 'static_img/info_head3.gif' );
+}
+div#show_blog div#blog_head h3 {
+	display:							block;
+	font-size:						1.05em;
+	font-weight:					italic;
+}
+
+div#show_blog div#blog_body {
+	display:							block;
+	width:								517px;
+	text-align:						left;
+	padding:							2px 5px 2px 8px;
+	background:						url( 'static_img/info_body1.gif' );
+}
+div#show_blog div#blog_body p {
+	display:							block;
+	width:								99%;
+	text-align:						left;
+	margin:								3px 0px 0px 0px;
+}
+div#show_blog div#blog_authour {
+	display:							block;
+	height:								19px;
+	padding:							8px 10px 0px 0px;
+	background:						url( 'static_img/info_footer2.gif' );
+}
+div#show_blog div#blog_authour p {
+	display:							block;
+	width:								99%;
+	margin:								0px 0px;
+	text-align:						right;
+}
+div#show_blog p {
+	display:							block;
+	width:								90%;
+	margin:								2px 0px;
+	text-align:						right;
+}
+
+/*=========================================================================*/
+/* The comments css in div:main_info */
+div#blog_comments {
+	border:								2px outset #999;
+	display:							block;
+	text-align:						center;
+	font-size:						1.0em;
+	width:								520px;
+	height:								20px;
+	margin:								5px auto 10px auto;
+	background:						#CCC;
+}
+
+div#blog_comments p {
+	text-align:					 	center;
+	background:						#888;
+	padding:							3px 10px 3px 0px;
+}
+div#blog_comments p span {
+	float:								right;
+	margin:								0px 0px;
+}
+div#blog_comments p span a {
+	text-decoration:			none;
+	font-size:						0.85em;
+	margin:								0px 2px;
+	font-family:					monospace;
+}
+
+div#comments {
+	width:								520px;
+	display:							block;
+	margin:								0px auto 0px auto;
+}
+div#comments div.blog_comment {
+	display:							block;
+	border:								2px outset #999;
+	margin:								0px 0px 5px 0px;
+	background:						#CCC;
+}
+div#comments div.blog_comment div.blog_comment_head {
+	padding:							2px 0px 2px 0px;
+}
+div#comments div.blog_comment div.blog_comment_head span {
+	display:							block;
+	float:								right;
+	margin:								0px 4px;
+}
+div#comments div.blog_comment div.blog_comment_head span a {
+	text-decoration:			none;
+}
+
+div#comments div.blog_comment div.blog_comment_text {
+	padding:							3px 2px;
+	border:								1px inset #999;
+}
+
+div#comments div.blog_comment div.blog_comment_end {
+}
+
+div#comments div.blog_comment p {
+	display:							block;
+	border:								1px solid #BBB;
+	padding:							1px 2px;
+}
+div#comments div.blog_comment p span {
+}
+div#comments div.blog_comment p span a {
+	text-decoration:			none;
+	font-size:						0.85em;
+	font-family:					monospace;
+	float:								right;
+	margin:								0px 2px;
+}
+div#comments div.blog_comment div {
+	display:							block;
+	margin:								2px;
+}
+/*---------------------------------------------------------------------------
+	This section handles the blog_menu on the page. There are a number of classes
+	for the li elements.
+*/
+div#blog_menu {
+	width:									208px;
+	float:									left;
+	display:								block;
+/*	height:									400px; */
+	min-height:							400px;
+	margin:									0px 0px 0px 0px;
+	background:							url( 'static_img/menu_backdrop1.jpg' );
+}
+div#blog_menu ul {
+	margin:									0px 4px;
+}
+div#blog_menu ul li.top_of_menu {
+	display:								block;
+	font-size:							12px;
+	font-family:						monospace;
+	min-height:							20px;
+	height:									20px;
+	max-height:							20px;
+	line-height:						20px;
+}
+div#blog_menu ul li {
+	display:								block;
+	font-size:							12px;
+	font-family:						monospace;
+	min-height:							20px;
+	height:									20px;
+	max-height:							20px;
+	line-height:						20px;
+}
+
+div#blog_menu ul li.blog_selected_year {
+	display:								block;
+	text-indent:						10px;
+	color:									#76c552;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_top_general5.gif' );
+}
+div#blog_menu ul li.blog_selected_year a {
+	color:									#ff9000;
+	text-decoration:				none;
+}
+
+div#blog_menu ul li.blog_unselected_year {
+	display:								block;
+	text-indent:						10px;
+	color:									#DDD;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_top_general4.gif' );
+}
+div#blog_menu ul li.blog_unselected_year a {
+	color:									#DDD;
+	text-decoration:				none;
+}
+
+div#blog_menu ul li.blog_selected_month {
+	display:								block;
+	text-indent:						15px;
+	color:									#ff9100;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_sub_general2.gif' );
+}
+div#blog_menu ul li.blog_selected_month a {
+	color:									#ffbb00;
+	text-decoration:				none;
+}
+div#blog_menu ul li.blog_unselected_month {
+	display:								block;
+	text-indent:						15px;
+	color:									#DDD;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_sub_general1.gif' );
+}
+div#blog_menu ul li.blog_unselected_month a {
+	color:									#f6b60a;
+	text-decoration:				none;
+}
+
+div#blog_menu ul li.blog_selected_blog {
+	display:								block;
+	text-indent:						15px;
+	color:									#76c552;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_article_general3.gif' );
+}
+div#blog_menu ul li.blog_selected_blog a {
+	color:									#76c552;
+	text-decoration:				none;
+}
+
+div#blog_menu ul li.blog_unselected_blog {
+	display:								block;
+	text-indent:						20px;
+	color:									#DDD;
+	text-decoration:				none;
+	background:							url( 'static_img/menu_article_general4.gif' );
+}
+div#blog_menu ul li.blog_unselected_blog a {
+	color:									#FFFD80;
+	text-decoration:				none;
+}
+
+div#blog_menu ul li a:hover {
+	text-decoration:				none;
+	color:									#99F;
+}
+
+/*
+	This pertains to the security question on any given user update.
+	Don't alter this without checking every instance of security as this
+	is heavily reused across the site.
+*/
+fieldset#question {
+	display:							block;
+	height:								105px;
+	min-height:						105px;
+	max-height:						105px;
+	width:								100%;
+}
+fieldset#question label {
+	width:								120px;
+}
+fieldset#question label img {
+	margin:								0px 5px;
+	display:							block;
+}
+fieldset#question span {
+	text-indent:					100px;
+	font-family:					monospace;
+	font-size:						13px;
+}
+fieldset#question span#instruct {
+	display:							block;
+	text-indent:					120px;
+	font-size:						0.85em;
+}
+
+/*
+	This is for the footer section. Hopefully it will deal only with semi static
+	content such as updates and so on.
+*/
+div#footer {
+	clear:								both;
+	display:							block;
+	height:								75px;
+	width:								960px;
+	padding:							0px 0px;
+	background:						url( 'static_img/footer_general1.gif' );
+}
+div#footer p {
+	margin:								0px 15px;
+	padding:							5px 0px;
+}

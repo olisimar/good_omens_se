@@ -1,0 +1,12 @@
+This is  the code I have written my self to produce my webpage.
+It's no where perfect but it fits the needs of the page I think.
+I've tried for a single controller with a non id driven DB which
+is why it looks like it does.
+This is very much a trial and error project so don't get impressed.
+I'm not ashamed of it but I know there are a lot better ways of
+doing this.
+Server was first on PHP4 with MySQL3, Now it's PHP5 with MySQL4
+which might show up here and where in my solutions of how I've
+done things.
+
+/Werner
